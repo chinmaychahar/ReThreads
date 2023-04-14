@@ -1,10 +1,10 @@
 /* position */
 .bm-burger-button {
     position : fixed;
-    width : 36px;
-    height : 30px;
-    left : 36px;
-    top : 36px;
+    width : 20px;
+    height : 20px;
+    left : 40px;
+    top : 40px;
 }
 
 /* color */
@@ -14,7 +14,7 @@
 
 /*color on hover */
 .bm-burger-bars-hover {
-    background: #d98ae4;
+    background: #dd62b8;
 }
 
 /* position of cross button */
@@ -38,7 +38,7 @@
 .bm-menu {
     background: #373a47;
     padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
+    font-size: 2.5em;
 }
   
 .bm-morph-shape {
