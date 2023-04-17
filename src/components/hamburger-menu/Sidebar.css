@@ -1,10 +1,10 @@
 /* position */
 .bm-burger-button {
     position : fixed;
-    width : 20px;
-    height : 20px;
-    left : 40px;
-    top : 40px;
+    width : 35px;
+    height : 35px;
+    left : 35px;
+    top : 35px;
 }
 
 /* color */
@@ -14,7 +14,7 @@
 
 /*color on hover */
 .bm-burger-bars-hover {
-    background: #dd62b8;
+    background: #c062dd;
 }
 
 /* position of cross button */
