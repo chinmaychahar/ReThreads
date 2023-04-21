@@ -1,5 +1,5 @@
 import './index.css';
-import Banner from'../../assets/Banner.png'
+import Banner from'../../assets/Images/Banner.png'
 
 const banner=()=>{
     return(
