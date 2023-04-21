@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
+import Appbar from './components/header/Appbar';
 import Banner from './components/banner/'
-import { BrowserRouter,Routes, Route } from "react-router-dom";
-import featureSec from './components/featureSection/section.js';
-
 function App() {
 
   return (
     <div >
+      <Appbar position="sticky" />
       <Banner />
+      
     </div>
   );
 }
