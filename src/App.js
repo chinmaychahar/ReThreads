@@ -4,6 +4,7 @@ import Appbar from './components/header/Appbar';
 import Banner from './components/banner/'
 import ShopByDisabilityCarousel from './components/Carousel/Carousel.jsx';
 import TopFeaturesCarousel from './components/Top-Featured/Top-Featured';
+import Footer from './components/footer/footer';
 function App() {
 
   return (
@@ -12,10 +13,12 @@ function App() {
       <Banner />
       <ShopByDisabilityCarousel/>
       <TopFeaturesCarousel/>
- 
+      <Footer/>
       
     </div>
   );
 }
 
 export default App;
+
+
