@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import TOPFEATURED from '../TopFeatured';
+import SHOPDATA from '../ShopData';
 
 const Shop = () => {
 
@@ -11,7 +11,7 @@ const Shop = () => {
                     <div class="card-body text-center">
                         <h5 class="card-title">{item.title}</h5>
                         <p className="lead">{item.price} INR</p>
-                        <NavLink to={`/products/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
+                        <NavLink to={`/allProducts/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
                     </div>
 </div>
                 );
@@ -27,7 +27,7 @@ const Shop = () => {
                     </div>
                     <div className="container">
                         <div className="row justify-content-around">
-                            {TOPFEATURED.map(cardItem)}
+                            {SHOPDATA.map(cardItem)}
                         </div>
                     </div>
                 </div>
