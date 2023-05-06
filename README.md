@@ -17,6 +17,27 @@ set NODE_OPTIONS=--openssl-legacy-provider
 And then make this change in package.json file:-
 "start": "react-scripts --openssl-legacy-provider start"
 
+
+=> Steps for increasing the number of products in 'Products' page
+- copied data from TopFeatured.jsx and pasted in a new file ShopData.jsx, changed TOPFEATURED function and default export TOPFEATURED to SHOPDATA on both locations
+
+- Go to file Shop.jsx inside Component folder
+- import SHOPDATA from ../ShopData.jsx
+- changed all instances in the file from TOPFEATURED to SHOPDATA
+
+Till here cards were added but the extra cards that were added did not got to deatils page when we clicked 'Buy Now'
+Steps to resolve that:-
+- Since ProductDetails.jsx file was taking data from TopFeatured.jsx file which is outside Components folde, I created another file named ProductDetailsForProductsPage.jsx
+
+- Copied content of ProductDetails.jsx file here
+- Changed all instances of TOPFEATURED to SHOPDATA
+
+Now this file needed to be rendered when I click Buy Now in Shop.jsx file and previously in Shop.jsx file buy Now redirected to PRoductDetails.jsx file,
+changes:- 
+- created another path in App.js file where '/allProducts' will redirect to ProductDetailsForProductsPage
+- Made changes in Shop.js and called '/allProducs' where 'Buy Now' is clicked
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

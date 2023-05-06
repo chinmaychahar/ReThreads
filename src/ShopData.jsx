@@ -37,7 +37,7 @@ const SHOPDATA = [
     {
         id : 5,
         title : "Shirt with Zipper on Shoulder",
-        price : 409,
+        price : 499,
         desc : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         img : "/assets/images/products/netapp_img9.png"
     },
@@ -56,28 +56,28 @@ const SHOPDATA = [
         img : "/assets/images/img12.jpg"
     },
     {
-        id : 4,
+        id : 8,
         title : "Women T-Shirt with front flap",
         price : 300,
         desc : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         img : "/assets/images/img1.jpeg"
     },
     {
-        id : 5,
+        id : 9,
         title : "Shirt with Zipper on Shoulder",
-        price : 409,
+        price : 499,
         desc : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         img : "/assets/images/products/netapp_img9.png"
     },
     {
-        id : 6,
+        id : 10,
         title : "Adaptive T-Shirt with front flap",
         price : 350,
         desc : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
         img : "/assets/images/img11.jpg"
     },
     {
-        id : 7,
+        id : 11,
         title : "Shirt with Magnetic buttons",
         price : 399,
         desc : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
