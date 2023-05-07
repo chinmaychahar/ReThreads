@@ -36,6 +36,21 @@ code {
   border-radius: 30px;
 }
 
+.media-box {
+  margin: auto;
+  padding: 3px;
+  width: 660px;
+  border-width: 5px;
+  border-radius: 10px;
+  border-color: rgb(255, 196, 0);
+  border-style: solid;
+  overflow: hidden;
+}
+
+.nav-texts:hover {
+  color: rgb(250, 219, 46)!important;
+}
+
 .my-card:hover {
   background-color: #ffffff!important;
   transform: scale(1)!important;

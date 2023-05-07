@@ -17,34 +17,14 @@ const Header = () => {
                     
                         <ul className="navbar-nav mx-auto mb-0 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
-                            </li>
-                            {/* <li className="nav-item"> */}
-                            {/* <div class="dropdown mb-0">
-                                    <button
-                                        class="btn bg-light"
-                                        type="button"
-                                        id="dropdownMenuButton"
-                                        data-mdb-toggle="dropdown"
-                                        aria-expanded="false"
-                                    >
-                                        <NavLink className="nav-link" to="/products">Product</NavLink>
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <li><a class="dropdown-item" href="/products">MEN</a></li>
-                                        <li><a class="dropdown-item" href="/products">WOMEN</a></li>
-                                        <li><a class="dropdown-item" href="/products">DISABILITY</a></li>
-                                        <li><a class="dropdown-item" href="/products">ALL PRODUCT</a></li>
-                                    </ul>
-                            </div> */}
-                            {/* </li> */}
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/products">Products</NavLink>
+                                <NavLink className="nav-texts nav-link " to="/" exact={true}>Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/about">About</NavLink>
-                            </li>   
-                            
+                                <NavLink className="nav-texts nav-link" to="/products">Products</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-texts nav-link" to="/about">About</NavLink>
+                            </li>        
                         </ul>
                     <CartBtn/>
                     </div>

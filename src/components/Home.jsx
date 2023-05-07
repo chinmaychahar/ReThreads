@@ -1,6 +1,5 @@
 import React from 'react'
 import Product from './Product'
-import TopFeatured from './TopFeatured'
 import Category from './Categories'
 
 const Home = () => {
