@@ -36,6 +36,7 @@ code {
   border-radius: 30px;
 }
 
+<<<<<<< HEAD
 .media-box {
   margin: auto;
   padding: 3px;
@@ -51,6 +52,8 @@ code {
   color: rgb(250, 219, 46)!important;
 }
 
+=======
+>>>>>>> 8791da41297fbb2faa914de44ae113d5024217af
 .my-card:hover {
   background-color: #ffffff!important;
   transform: scale(1)!important;
