@@ -1,31 +1,24 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-<<<<<<< HEAD
 import ReactPlayer from 'react-player'
 
 const About = () => {
 
     const VIDEO_PATH = '../assets/ReThreads-Video.mp4';
 
-=======
-
 const About = () => {
->>>>>>> 8791da41297fbb2faa914de44ae113d5024217af
     return (
         <div>
             <div className="container py-5 my-5">
                 <div className=" row">
                 <h1 className="head-text text-warning fw-bold mx-auto">Discover ReThreads</h1>
-<<<<<<< HEAD
                 <div align="center" className='media-box'>
                     <ReactPlayer url={VIDEO_PATH} controls={true} />
                 </div>
                 <div class
                 Name=" d-flex justify-content-center"></div>
-=======
                 <div className=" d-flex justify-content-center">
                                     </div>
->>>>>>> 8791da41297fbb2faa914de44ae113d5024217af
                     <div className="mt-5">
                         
                         <p className="first-p about-text lead">
@@ -45,11 +38,8 @@ We believe that everyone should have access to comfortable and functional clothi
 
                         </p>
                         <div class="text-center">
-<<<<<<< HEAD
                         <NavLink to="/contact" className="about-btn btn btn-outline-warning px-3">Contact ReThreads</NavLink>
-=======
                         <NavLink to="/contact" className="about-btn btn btn-outline-warning px-3">Contribute with Us</NavLink>
->>>>>>> 8791da41297fbb2faa914de44ae113d5024217af
                         </div>
                         </div>
                 </div>
@@ -57,5 +47,5 @@ We believe that everyone should have access to comfortable and functional clothi
         </div>
     )
 }
-
+}
 export default About
