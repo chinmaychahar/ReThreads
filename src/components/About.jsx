@@ -6,7 +6,6 @@ const About = () => {
 
     const VIDEO_PATH = '../assets/ReThreads-Video.mp4';
 
-const About = () => {
     return (
         <div>
             <div className="container py-5 my-5">
@@ -47,5 +46,5 @@ We believe that everyone should have access to comfortable and functional clothi
         </div>
     )
 }
-}
+
 export default About

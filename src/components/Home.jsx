@@ -1,9 +1,5 @@
 import React from 'react'
 import Product from './Product'
-<<<<<<< HEAD
-=======
-import TopFeatured from './TopFeatured'
->>>>>>> 8791da41297fbb2faa914de44ae113d5024217af
 import Category from './Categories'
 
 const Home = () => {
