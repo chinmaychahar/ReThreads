@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import SHOPDATA from '../ShopData';
+import GoToTop from './GoToTop';
 
 const Shop = () => {
 
@@ -13,6 +14,7 @@ const Shop = () => {
                         <p className="lead">{item.price} INR</p>
                         <NavLink to={`/allProducts/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
                     </div>
+                    <GoToTop/>
 </div>
                 );
     }
@@ -20,8 +22,8 @@ const Shop = () => {
                 <div>
                     <div className="container mt-3 mb-0 py-5">
                         <div className="row">
-                            <div className="col-12 text-center ">
-                                <h1>All Products</h1>
+                            <div className="col-12 text-center " style={{color: 'grey'}}>
+                                <h2>All Products</h2>
                             </div>
                         </div>
                     </div>

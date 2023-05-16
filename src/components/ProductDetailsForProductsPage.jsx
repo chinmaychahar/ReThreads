@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SHOPDATA from '../ShopData'
 import { useDispatch } from 'react-redux';
 import {addItem, delItem} from '../redux/actions/index'
+import GoToTop from './GoToTop';
 
 const ProductDetail = () => {
     const [cartBtn, setCartBtn] = useState("Add to Cart")
@@ -39,6 +40,7 @@ const ProductDetail = () => {
                     <button onClick={()=>handleCart(product)} className="btn btn-outline-warning my-5">{cartBtn}</button>
                 </div>
             </div>
+            <GoToTop/>
         </div>
         </>
     )

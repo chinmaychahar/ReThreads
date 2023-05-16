@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import {delItem} from '../redux/actions/index'
 import { NavLink } from 'react-router-dom'
+import GoToTop from './GoToTop'
 
 
 const Cart = () => {
@@ -50,6 +51,7 @@ const Cart = () => {
                 <div className="row">
                     <NavLink to="/checkout" className="btn btn-outline-warning mb-5 w-25 mx-auto">Proceed To checkout</NavLink>
                 </div>
+                <GoToTop/>
             </div>
         );
     }

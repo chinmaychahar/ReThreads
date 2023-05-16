@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import TOPFEATURED from '../TopFeatured'
+import GoToTop from './GoToTop';
 
 const Product = () => {
 
@@ -13,6 +14,7 @@ const Product = () => {
                         <p className="lead">{item.price} INR</p>
                         <NavLink to={`/products/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
                     </div>
+                    <GoToTop/>
 </div>
                 );
     }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Product from './Product'
 import Category from './Categories'
+import GoToTop from './GoToTop'
 
 const Home = () => {
     return (
@@ -36,7 +37,8 @@ const Home = () => {
                             </button>
                         </div>
                         <Category/>
-                        <Product/>                
+                        <Product/>   
+                        <GoToTop/>             
                     </div>
                     )
 }

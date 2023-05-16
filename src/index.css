@@ -103,6 +103,15 @@ code {
   text-align: justify;
 }
 
+.testimonial-text {
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+  font-size: small;
+  text-align: justify;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
 .about-btn {
   text-align: center;
   margin-top: 20px;
@@ -115,4 +124,9 @@ code {
 .con-head {
   color: rgb(255, 202, 29);
   margin-top: -18px;
+}
+
+.avatar {
+  margin-top: 25px;
+  margin-left: 250px;
 }

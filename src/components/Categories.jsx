@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
 import DATA from './Data'
+import GoToTop from './GoToTop'
 
 const Category = () => {
 
@@ -11,8 +12,9 @@ const Category = () => {
                     <div class="card-body text-center">
                         <h5 class="card-title">{item.title}</h5>
                         <p className="lead">{item.price} </p>
-                        <NavLink to={`/products/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
+                        <NavLink to={`/Alzheimer`} class="btn btn-outline-warning">Buy Now</NavLink>
                     </div>
+                <GoToTop  />
 </div>
                 );
     }

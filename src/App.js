@@ -10,6 +10,7 @@ import ProductDetailForProductsPage from './components/ProductDetailsForProducts
 import Cart from './components/Cart';
 import Checkout from './components/Checkout'
 import Shop from './components/Shop';
+import Clothes from './components/Alzheimer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/products" component={Shop} />
+        <Route exact path="/Alzheimer" component={Clothes} />
         <Route exact path="/products/:id" component={ProductDetail} />
         <Route exact path="/allProducts/:id" component={ProductDetailForProductsPage} />
         <Route exact path="/cart" component={Cart} />

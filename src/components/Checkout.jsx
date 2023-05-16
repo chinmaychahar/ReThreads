@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import GoToTop from './GoToTop';
 
 const Checkout = () => {
     const state = useSelector((state) => state.addItem)
@@ -197,6 +198,7 @@ const Checkout = () => {
                         </form>
                     </div>
                 </div>
+                <GoToTop/>
             </div>
         </>
     )

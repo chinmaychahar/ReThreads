@@ -1,4 +1,5 @@
 import React from 'react'
+import GoToTop from './GoToTop'
 
 const Contact = () => {
     return (
@@ -32,6 +33,7 @@ const Contact = () => {
                     </div>
                     </div>
                 </div>
+                <GoToTop/>
             </div>
             )
 }
