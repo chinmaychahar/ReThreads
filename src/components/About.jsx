@@ -37,7 +37,7 @@ const About = () => {
                 </div>
                 <div className="col-md-6">
                 <p className="testimonial-text lead"> Meet Shreya, she's our special first customer and has been battling Cerebral Palsy since her birth. Shreya needs her mom's asistance in getting dressed everyday and we just wanted to lend a small helping hand to make the process easier for both of them. Her mom gave us permission to redesign adaptive clothes that fit her needs.</p> 
-                <p className="testimonial-text lead"> "The design is convenient and reduces the hassle of wearing cloth for my daughter by a lot. The velcro could have been attached more firmly and without leaving gaps but otherwise, with a proper stich and finishing, I'd defintely invest in buying such afforadable adaptive clothes for my daughter." - Her mom  </p>
+                <p className="testimonial-text lead"> "The design is convenient and reduces the hassle of wearing cloth for my daughter by a lot. The velcro could have been attached more firmly and without leaving gaps but otherwise, with a proper stitch and finishing, I'd defintely invest in buying such afforadable adaptive clothes for my daughter." - Her mom  </p>
                 </div>
         </div>
         </div>

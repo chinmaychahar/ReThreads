@@ -31,7 +31,7 @@ const Checkout = () => {
                             {state.map(itemList)}
 
                             <li className="list-group-item d-flex justify-content-between">
-                                <span>Total (USD)</span>
+                                <span>Total (INR)</span>
                                 <strong>{total} INR</strong>
                             </li>
                         </ul>
@@ -64,12 +64,12 @@ const Checkout = () => {
                                 </div>
 
                                 <div className="col-12">
-                                    <label htmlFor="username" className="form-label">Username</label>
+                                    <label htmlFor="username" className="form-label">Contact</label>
                                     <div className="input-group has-validation">
-                                        <span className="input-group-text">@</span>
-                                        <input type="text" className="form-control" id="username" placeholder="Username" required="" />
+                                        <span className="input-group-text">+91</span>
+                                        <input type="text" className="form-control" id="username" placeholder="Contact No." required="" />
                                         <div className="invalid-feedback">
-                                            Your username is required.
+                                            Your contact number is required.
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@ const Checkout = () => {
                                     <label htmlFor="country" className="form-label">Country</label>
                                     <select className="form-select" id="country" required="">
                                         <option value="">Choose...</option>
-                                        <option>United States</option>
+                                        <option>India</option>
                                     </select>
                                     <div className="invalid-feedback">
                                         Please select a valid country.
@@ -110,7 +110,7 @@ const Checkout = () => {
                                     <label htmlFor="state" className="form-label">State</label>
                                     <select className="form-select" id="state" required="">
                                         <option value="">Choose...</option>
-                                        <option>California</option>
+                                        <option>Bangalore</option>
                                     </select>
                                     <div className="invalid-feedback">
                                         Please provide a valid state.
