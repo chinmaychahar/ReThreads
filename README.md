@@ -6,6 +6,9 @@
 [![GitHub issues](https://img.shields.io/github/issues/chinmaychahar/ReThreads?style=for-the-badge)](https://GitHub.com/chiinmaychahar/ReThreads/issues/)
 [![Languages](https://img.shields.io/github/languages/count/chinmaychahar/ReThreads?style=for-the-badge)](https://github.com/chinmaychahar/ReThreads)
 
+🎉 **First Runners-up pitch in NetApp Women Innovathon 2023**
+
+    
 </div>
 
 ## Table of Contents
