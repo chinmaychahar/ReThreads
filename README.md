@@ -1,52 +1,100 @@
-# If you face issue regarding openSSL
+[![ReThreads Intro](https://github.com/chinmaychahar/ReThreads/assets/56752925/45c66214-4004-484c-8feb-6342e1df5b70)](https://www.youtube.com/watch?v=kr1XlZzlxlw)
 
-issue:
- {
-  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
-  library: 'digital envelope routines',
-  reason: 'unsupported',
-  code: 'ERR_OSSL_EVP_UNSUPPORTED'
-}
+<div align="center">
 
-Node.js v18.14.0
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/chinmaychahar/ReThreads?logo=github&style=for-the-badge)](https://github.com/chinmaychahar/) 
+[![GitHub issues](https://img.shields.io/github/issues/chinmaychahar/ReThreads?style=for-the-badge)](https://GitHub.com/chiinmaychahar/ReThreads/issues/)
+[![Languages](https://img.shields.io/github/languages/count/chinmaychahar/ReThreads?style=for-the-badge)](https://github.com/chinmaychahar/ReThreads)
+
+</div>
+
+## Table of Contents
+    - Introduction 
+    - Why?
+    - Tech Stack
+    - User Interface
+    - Process Trial Run
+    - Setup Guide
+    - Available Scripts
+    - Contribution Guidelines
+    - License
+    
+      
+## 💛 Introduction 
+With ReThreads, we have developed a unique platform that operates on two fundamental pillars: donations and innovation
+
+📌 The journey begins with generous donations from individuals who contribute their old clothing items
+
+📌 Once these donations are received, our team carefully selects the garments to process
+
+📌 Our volunteer designers and tailors work closely to redesign and modify the donated clothes, incorporating adaptive features
+
+By repurposing and upcycling these donated garments, we not only make them affordable but also promote sustainability by reducing textile waste. Through our platform, individuals with special needs gain access to a wide range of stylish, adaptive clothing options that are both affordable and environmentally friendly. 
+
+## 💡 Why?
+The problem we aim to tackle is clear and urgent. Across the world, there is a significant scarcity of cost-effective and adaptive clothing for differently-abled individuals. This scarcity deprives them of the independence, comfort, and self-expression that suitable clothing can provide. 
+
+Traditional clothing options often fall short in meeting the specific requirements as they can be expensive and limited in accessibility for those already facing financial challenges. Moreover, the lack of adaptive features can hinder their ability to dress themselves confidently and comfortably. 
+
+Learn more about our idea here : [https://www.youtube.com/watch?v=kr1XlZzlxlw](https://www.youtube.com/watch?v=kr1XlZzlxlw)
+
+## 📍 Tech Stack
+
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+
+## 📷 User Interface
+
+<table>
+  <tr>
+   <td>Home Page</td>
+   <td>Categories</td>
+   </tr>
+  <tr>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/5ccf32af-7d6c-4aa3-be60-3e7d41114919" width=100% height=260></td>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/daf0ab4f-3f50-41d6-a322-7ffd0704e953" width=100% height=260></td>
+  </tr>
+  <tr>
+   <td>Catalogue</td>
+   <td>Product Detail</td>
+   </tr>
+  <tr>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/23522d57-70ac-4724-ab34-00f39eafc2e1" width=100% height=260></td>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/daf0ab4f-3f50-41d6-a322-7ffd0704e953" width=100% height=260></td>
+  </tr>
+  <tr>
+   <td>Cart</td>
+   <td>About Page</td>
+   </tr>
+  <tr>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/730d8403-04d2-47aa-8774-629180c54793" width=100% height=260></td>
+    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/e36ff1f7-a4ae-4d61-b98b-032120ba7e45" width=100% height=260></td>
+  </tr>
+</table>
+
+## 🌺 Process Trial Run
+
+![ Process Trial Run](https://github.com/chinmaychahar/ReThreads/assets/56752925/035a2ab0-a6d2-462e-9a93-7eda99ea2d94)
+
+Learn more about it here - [Pitch Deck](https://www.canva.com/design/DAFlVy3cfXw/PteEnuu3_Ajn3YBjpK6UcA/view?utm_content=DAFlVy3cfXw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 
-Try writing this command in terminal:-
-set NODE_OPTIONS=--openssl-legacy-provider
+## 🔨 Setup Guide
 
-And then make this change in package.json file:-
-"start": "react-scripts --openssl-legacy-provider start"
+To start with setting up the Local Project Environment:
 
+```shell
+- git clone https://github.com/chinmaychahar/ReThreads.git
+- cd ReThreads
+- npm install
+- npm start
+- go to http://localhost:3000/ and get started
+```
 
-=> Steps for increasing the number of products in 'Products' page
-- copied data from TopFeatured.jsx and pasted in a new file ShopData.jsx, changed TOPFEATURED function and default export TOPFEATURED to SHOPDATA on both locations
-
-- Go to file Shop.jsx inside Component folder
-- import SHOPDATA from ../ShopData.jsx
-- changed all instances in the file from TOPFEATURED to SHOPDATA
-
-Till here cards were added but the extra cards that were added did not got to deatils page when we clicked 'Buy Now'
-Steps to resolve that:-
-- Since ProductDetails.jsx file was taking data from TopFeatured.jsx file which is outside Components folde, I created another file named ProductDetailsForProductsPage.jsx
-
-- Copied content of ProductDetails.jsx file here
-- Changed all instances of TOPFEATURED to SHOPDATA
-
-Now this file needed to be rendered when I click Buy Now in Shop.jsx file and previously in Shop.jsx file buy Now redirected to PRoductDetails.jsx file,
-changes:- 
-- created another path in App.js file where '/allProducts' will redirect to ProductDetailsForProductsPage
-- Made changes in Shop.js and called '/allProducs' where 'Buy Now' is clicked
-
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## 💻 Available Scripts
 
 In the project directory, you can run:
 
-### `yarn start`
+### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -54,12 +102,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+### `npm test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### `npm build`
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -69,42 +117,66 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## 🤝 Contribution Guidelines 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Kindly follow the below guidelines if you wish to contribute to the project:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Fork [this](https://github.com/chinmaychahar/ReThreads) repository and clone it
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+git clone https://github.com/chinmaychahar/ReThreads.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. Add a reference(remote) to the original repository
 
-## Learn More
+```
+git remote add upstream https://github.com/chinmaychahar/ReThreads.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Check the remotes for this repository
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+git remote -v
+```
 
-### Code Splitting
+4. Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+git pull upstream main
+```
 
-### Analyzing the Bundle Size
+5. Create a new branch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+git checkout -b <your_branch_name>
+```
 
-### Making a Progressive Web App
+6. Perfom desired changes to the code base and track your changes 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```
+git add .
+git status
+```
 
-### Advanced Configuration
+7. Commit your changes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+git commit -m "Relevant message"
+```
 
-### Deployment
+8. Push the committed changes in your feature branch to your remote repo
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+git push -u origin <your_branch_name>
+```
 
-### `yarn build` fails to minify
+9. To create a pull request, click on `compare and pull requests`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+10. Add appropriate title and description to your pull request explaining your changes. Click on `Create Pull Request`
+
+## 📜 License
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+   
+   
+
