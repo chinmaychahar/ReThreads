@@ -178,7 +178,7 @@ git push -u origin <your_branch_name>
 10. Add appropriate title and description to your pull request explaining your changes. Click on `Create Pull Request`
 
 ## 📜 License
-[MIT License] (https://github.com/chinmaychahar/ReThreads/blob/main/LICENSE)
+
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
    
    
