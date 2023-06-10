@@ -78,6 +78,10 @@ Learn more about our idea here : [https://www.youtube.com/watch?v=kr1XlZzlxlw](h
 
 ![ Process Trial Run](https://github.com/chinmaychahar/ReThreads/assets/56752925/035a2ab0-a6d2-462e-9a93-7eda99ea2d94)
 
+## 🎯 Societal Impact
+
+Our idea aligns with the United Nations Sustainable Development Goals 12 (Responsible Consumption and Production) and 13 (Climate Action). 
+
 Learn more about it here - [Pitch Deck](https://www.canva.com/design/DAFlVy3cfXw/PteEnuu3_Ajn3YBjpK6UcA/view?utm_content=DAFlVy3cfXw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
 
