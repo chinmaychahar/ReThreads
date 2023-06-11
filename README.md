@@ -80,6 +80,13 @@ Learn more about our idea here : [https://www.youtube.com/watch?v=kr1XlZzlxlw](h
 
 Learn more about it here - [Pitch Deck](https://www.canva.com/design/DAFlVy3cfXw/PteEnuu3_Ajn3YBjpK6UcA/view?utm_content=DAFlVy3cfXw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
+## 🎯 Societal Impact
+
+Our idea aligns with the following United Nations Sustainable Development Goals:
+- Responsible Consumption and Production (Goal 12)
+- Climate Action (Goal 13)
+
+
 
 ## 🔨 Setup Guide
 
