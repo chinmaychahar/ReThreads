@@ -1,49 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { useState } from 'react';
-import TOPFEATURED from '../TopFeatured'
-import { useDispatch } from 'react-redux';
-import {addItem, delItem} from '../redux/actions/index'
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProductById } from '../redux/actions/productActions';
+import { addToCart, removeFromCart } from '../redux/actions/cartActions';
+import RecommendationSection from './recommendations/RecommendationSection';
 import GoToTop from './GoToTop';
 
 const ProductDetail = () => {
     const [cartBtn, setCartBtn] = useState("Add to Cart")
-    const proid = useParams();
-    // eslint-disable-next-line
-    const proDetail = TOPFEATURED.filter(x=>x.id == proid.id)
-    const product = proDetail[0];
+    const { id } = useParams();
+    const dispatch = useDispatch();
+    const { currentProduct, loading } = useSelector((state) => state.products);
 
-    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchProductById(id));
+    }, [dispatch, id]);
+
+    const product = currentProduct;
 
     const handleCart = (product) => {
         if (cartBtn === "Add to Cart") {
-            dispatch(addItem(product))
+            dispatch(addToCart(product))
             setCartBtn("Remove from Cart")
-        }
-        else{
-            dispatch(delItem(product))
+        } else {
+            dispatch(removeFromCart(product.$id || product.id))
             setCartBtn("Add to Cart")
         }
     }
 
-    return (
-        <>
-        <div className="container my-5 py-3">
-            <div className="row">
-                <div className="col-md-6 d-flex justify-content-center mx-auto product">
-                    <img src={product.img} alt={product.title}height="400px" />
-                </div>
-                <div className="col-md-6 d-flex flex-column justify-content-center">
-                    <h1 className="display-5 fw-bold">{product.title}</h1>
-                    <hr />
-                    <h2 className="my-4">{product.price} INR</h2>
-                    <p className="lead">{product.desc}</p>
-                    <button onClick={()=>handleCart(product)} className="btn btn-outline-warning my-5">{cartBtn}</button>
+    if (loading || !product) {
+        return (
+            <div className="container text-center py-5">
+                <div className="spinner-border text-warning" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
             </div>
-            <GoToTop/>
+        );
+    }
 
+    return (
+        <>
+        <div className="section-padding">
+            <div className="container">
+                <div className="row g-5 align-items-center">
+                    <div className="col-md-6 product">
+                        <img src={product.img} alt={product.title} className="product-detail-img w-100" />
+                    </div>
+                    <div className="col-md-6">
+                        <h1 style={{fontSize: '2rem', fontWeight: 700}}>{product.title}</h1>
+                        <p className="text-price" style={{fontSize: '1.5rem', margin: '16px 0'}}>{product.price} INR</p>
+                        <p style={{color: 'var(--color-text-muted)', lineHeight: 1.8}}>{product.desc}</p>
+                        <button onClick={() => handleCart(product)} className="btn btn-warning mt-3" style={{padding: '14px 40px'}}>
+                            {cartBtn}
+                        </button>
+                    </div>
+                </div>
+                <RecommendationSection productId={id} />
+            </div>
         </div>
+        <GoToTop/>
         </>
     )
 }

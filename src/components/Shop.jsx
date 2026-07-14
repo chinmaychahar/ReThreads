@@ -1,39 +1,60 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
-import SHOPDATA from '../ShopData';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '../redux/actions/productActions';
 import GoToTop from './GoToTop';
 
 const Shop = () => {
+    const dispatch = useDispatch();
+    const { items, loading, error } = useSelector((state) => state.products);
 
-    const cardItem = (item) => {
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
+
+    if (loading) {
         return (
-            <div class="card my-1 py-4 mb-5" key={item.id} style={{width: "15rem"}}>
-                <img src={item.img} class="card-img-top" alt={item.title}/>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">{item.title}</h5>
-                        <p className="lead">{item.price} INR</p>
-                        <NavLink to={`/allProducts/${item.id}`} class="btn btn-outline-warning">Buy Now</NavLink>
-                    </div>
-                    <GoToTop/>
-</div>
-                );
-    }
-                return (
-                <div>
-                    <div className="container mt-3 mb-0 py-5">
-                        <div className="row">
-                            <div className="col-12 text-center " style={{color: 'grey'}}>
-                                <h2>All Products</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <div className="row justify-content-around">
-                            {SHOPDATA.map(cardItem)}
-                        </div>
-                    </div>
+            <div className="container text-center py-5">
+                <div className="spinner-border" role="status">
+                    <span className="visually-hidden">Loading...</span>
                 </div>
-                )
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="container text-center py-5">
+                <div className="alert alert-danger">
+                    Failed to load products. Please try again later.
+                </div>
+            </div>
+        );
+    }
+
+    return (
+        <div className="section-padding">
+            <div className="container">
+                <h2 className="section-title">All Products</h2>
+                <div className="product-grid">
+                    {items.map((item) => {
+                        const itemId = item.$id || item.id;
+                        return (
+                            <div className="card" key={itemId}>
+                                <img src={item.img} className="card-img-top" alt={item.title}/>
+                                <div className="card-body text-center">
+                                    <h5 className="card-title">{item.title}</h5>
+                                    <p className="text-price mb-3">{item.price} INR</p>
+                                    <NavLink to={`/allProducts/${itemId}`} className="btn btn-outline-warning btn-sm">Buy Now</NavLink>
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+            <GoToTop/>
+        </div>
+    )
 }
 
-                export default Shop
+export default Shop

@@ -1,192 +1,174 @@
-[![ReThreads Intro](https://github.com/chinmaychahar/ReThreads/assets/56752925/45c66214-4004-484c-8feb-6342e1df5b70)](https://www.youtube.com/watch?v=kr1XlZzlxlw)
+# ReThreads
 
-<div align="center">
+An adaptive clothing platform powered by a donation-to-storefront pipeline. Donors contribute used clothing, volunteers convert them into adaptive garments (magnetic closures, velcro, side zips, etc.), and the platform sells them affordably to people with special needs.
 
-[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/chinmaychahar/ReThreads?logo=github&style=for-the-badge)](https://github.com/chinmaychahar/) 
-[![GitHub issues](https://img.shields.io/github/issues/chinmaychahar/ReThreads?style=for-the-badge)](https://GitHub.com/chiinmaychahar/ReThreads/issues/)
-[![Languages](https://img.shields.io/github/languages/count/chinmaychahar/ReThreads?style=for-the-badge)](https://github.com/chinmaychahar/ReThreads)
+First Runners-up pitch in NetApp Women Innovathon 2023.
 
-🎉 **First Runners-up pitch in NetApp Women Innovathon 2023**
+---
 
-    
-</div>
+## How It Works
 
-## Table of Contents
-    - Introduction 
-    - Why?
-    - Tech Stack
-    - User Interface
-    - Process Trial Run
-    - Setup Guide
-    - Available Scripts
-    - Contribution Guidelines
-    - License
-    
-      
-## 💛 Introduction 
-With ReThreads, we have developed a unique platform that operates on two fundamental pillars: donations and innovation
+1. **Donors** submit used clothing through the platform
+2. **System** assigns donations to the best-fit volunteer using a weighted scoring algorithm
+3. **Volunteers/NGOs** redesign, sanitize, and seal garments into adaptive clothing
+4. **Admin** reviews quality and approves listings
+5. **Buyers** purchase affordable adaptive clothing; get notified when matching items become available
 
-📌 The journey begins with generous donations from individuals who contribute their old clothing items
+---
 
-📌 Once these donations are received, our team carefully selects the garments to process
+## Tech Stack
 
-📌 Our volunteer designers and tailors work closely to redesign and modify the donated clothes, incorporating adaptive features
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 17, Redux + Thunk, React Router v5, Bootstrap 5 |
+| Backend API | Express.js (layered architecture: routes/controllers/services/repositories) |
+| Database + Auth | Appwrite Cloud (9 collections, JWT auth, file storage) |
+| Validation | Zod |
+| Events | Node.js EventEmitter (async side-effects) |
+| Caching | node-cache (in-memory, TTL-based) |
 
-By repurposing and upcycling these donated garments, we not only make them affordable but also promote sustainability by reducing textile waste. Through our platform, individuals with special needs gain access to a wide range of stylish, adaptive clothing options that are both affordable and environmentally friendly. 
+---
 
-## 💡 Why?
-The problem we aim to tackle is clear and urgent. Across the world, there is a significant scarcity of cost-effective and adaptive clothing for differently-abled individuals. This scarcity deprives them of the independence, comfort, and self-expression that suitable clothing can provide. 
+## Architecture
 
-Traditional clothing options often fall short in meeting the specific requirements as they can be expensive and limited in accessibility for those already facing financial challenges. Moreover, the lack of adaptive features can hinder their ability to dress themselves confidently and comfortably. 
+```
+React Frontend (localhost:3000)
+  ├── Appwrite Client SDK → Auth, sessions, realtime
+  └── fetch() → Express API (localhost:4000)
+                  ├── middleware/ (auth, roleGuard, validate, rateLimiter)
+                  ├── controllers/ (thin HTTP layer)
+                  ├── services/ (business logic, algorithms)
+                  ├── repositories/ (Appwrite DB abstraction)
+                  └── events/ (EventEmitter for async work)
+```
 
-Learn more about our idea here : [https://www.youtube.com/watch?v=kr1XlZzlxlw](https://www.youtube.com/watch?v=kr1XlZzlxlw)
+---
 
-## 📍 Tech Stack
+## Key Features
 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
+- **Donation Processing Pipeline** -- Multi-stage state machine (received → assigned → converting → converted → quality_check → listed)
+- **Volunteer Assignment Algorithm** -- Weighted scoring across specialization, capacity, track record, category experience, and proximity
+- **Buyer Request Matching** -- Notifies buyers when a product matching their needs gets listed (category, adaptive type, size, urgency, budget)
+- **Content-Based Recommendations** -- Similarity scoring on product attributes with in-memory caching
+- **Order Pipeline** -- Stock validation, 18% GST calculation, atomic reservation with rollback on failure
+- **Role-Based Access** -- Buyer, donor, volunteer, admin roles with route-level guards
+- **Event-Driven Side Effects** -- Decoupled async processing (auto-assign volunteers, auto-list products, auto-match buyers)
 
-## 📷 User Interface
+---
 
-<table>
-  <tr>
-   <td>Home Page</td>
-   <td>Categories</td>
-   </tr>
-  <tr>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/5ccf32af-7d6c-4aa3-be60-3e7d41114919" width=100% height=260></td>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/daf0ab4f-3f50-41d6-a322-7ffd0704e953" width=100% height=260></td>
-  </tr>
-  <tr>
-   <td>Catalogue</td>
-   <td>Product Detail</td>
-   </tr>
-  <tr>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/23522d57-70ac-4724-ab34-00f39eafc2e1" width=100% height=260></td>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/daf0ab4f-3f50-41d6-a322-7ffd0704e953" width=100% height=260></td>
-  </tr>
-  <tr>
-   <td>Cart</td>
-   <td>About Page</td>
-   </tr>
-  <tr>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/730d8403-04d2-47aa-8774-629180c54793" width=100% height=260></td>
-    <td><img src="https://github.com/chinmaychahar/ReThreads/assets/56752925/e36ff1f7-a4ae-4d61-b98b-032120ba7e45" width=100% height=260></td>
-  </tr>
-</table>
+## Setup Guide
 
-## 🌺 Process Trial Run
+### Prerequisites
 
-![ Process Trial Run](https://github.com/chinmaychahar/ReThreads/assets/56752925/035a2ab0-a6d2-462e-9a93-7eda99ea2d94)
+- Node.js 16+
+- An Appwrite Cloud account (free tier)
 
-Learn more about it here - [Pitch Deck](https://www.canva.com/design/DAFlVy3cfXw/PteEnuu3_Ajn3YBjpK6UcA/view?utm_content=DAFlVy3cfXw&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+### 1. Clone and install
 
-## 🎯 Societal Impact
+```bash
+git clone https://github.com/chinmaychahar/ReThreads.git
+cd ReThreads
+npm install
+cd server && npm install && cd ..
+```
 
-Our idea aligns with the following United Nations Sustainable Development Goals:
+### 2. Configure environment
+
+Copy the example env and fill in your Appwrite credentials:
+
+```bash
+cp server/.env.example server/.env
+```
+
+Edit `server/.env`:
+```
+PORT=4000
+APPWRITE_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+APPWRITE_PROJECT_ID=<your-project-id>
+APPWRITE_API_KEY=<your-api-key>
+APPWRITE_DATABASE_ID=rethreads
+FRONTEND_URL=http://localhost:3000
+```
+
+Create a root `.env`:
+```
+REACT_APP_API_URL=http://localhost:4000
+REACT_APP_APPWRITE_ENDPOINT=https://sgp.cloud.appwrite.io/v1
+REACT_APP_APPWRITE_PROJECT_ID=<your-project-id>
+```
+
+### 3. Set up database
+
+```bash
+cd server
+node src/scripts/setupCollections.js   # Creates 9 collections
+node src/scripts/seedProducts.js       # Seeds 32 products
+```
+
+### 4. Run
+
+Terminal 1 (backend):
+```bash
+cd server && npm run dev
+```
+
+Terminal 2 (frontend):
+```bash
+npm start
+```
+
+Open http://localhost:3000
+
+---
+
+## Project Structure
+
+```
+ReThreads/
+  src/
+    components/       (React UI components)
+    redux/            (store, reducers, actions with thunks)
+    config/           (API and Appwrite client config)
+  server/
+    src/
+      config/         (Appwrite SDK, env validation)
+      middleware/     (auth, roleGuard, validate, rateLimiter, errorHandler)
+      routes/         (Express route definitions)
+      controllers/    (HTTP layer, thin)
+      services/       (business logic, algorithms)
+      repositories/   (Appwrite DB abstraction)
+      schemas/        (Zod validation schemas)
+      events/         (EventEmitter bus + handlers)
+      scripts/        (DB setup and seed scripts)
+      utils/          (errors, logger, pagination)
+```
+
+---
+
+## API Endpoints
+
+| Group | Routes |
+|-------|--------|
+| Products | GET /api/products, /featured, /category/:cat, /:id |
+| Search | GET /api/search?q=&category=&adaptiveType=&minPrice=&maxPrice= |
+| Orders | POST /api/orders, GET /api/orders, /:id, PATCH /:id/cancel |
+| Donations | POST /api/donations, GET /mine, /status/:status, /:id |
+| Volunteer | POST /register, GET /assignments, PATCH /assignments/:id |
+| Buyer Requests | POST /api/buyer-requests, GET /mine, DELETE /:id |
+| Recommendations | GET /api/recommendations/:productId, /personalized |
+| Contact | POST /api/contact |
+| Admin | GET/PATCH donations, orders, messages (role-guarded) |
+
+---
+
+## Societal Impact
+
+Aligns with UN Sustainable Development Goals:
 - Responsible Consumption and Production (Goal 12)
 - Climate Action (Goal 13)
 
+---
 
+## License
 
-## 🔨 Setup Guide
-
-To start with setting up the Local Project Environment:
-
-```shell
-- git clone https://github.com/chinmaychahar/ReThreads.git
-- cd ReThreads
-- npm install
-- npm start
-- go to http://localhost:3000/ and get started
-```
-
-## 💻 Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## 🤝 Contribution Guidelines 
-
-Kindly follow the below guidelines if you wish to contribute to the project:
-
-1. Fork [this](https://github.com/chinmaychahar/ReThreads) repository and clone it
-
-```
-git clone https://github.com/chinmaychahar/ReThreads.git
-```
-
-2. Add a reference(remote) to the original repository
-
-```
-git remote add upstream https://github.com/chinmaychahar/ReThreads.git
-```
-
-3. Check the remotes for this repository
-
-```
-git remote -v
-```
-
-4. Always take a pull from the upstream repository to your master branch to keep it at par with the main project(updated repository)
-
-```
-git pull upstream main
-```
-
-5. Create a new branch
-
-```
-git checkout -b <your_branch_name>
-```
-
-6. Perfom desired changes to the code base and track your changes 
-
-```
-git add .
-git status
-```
-
-7. Commit your changes
-
-```
-git commit -m "Relevant message"
-```
-
-8. Push the committed changes in your feature branch to your remote repo
-
-```
-git push -u origin <your_branch_name>
-```
-
-9. To create a pull request, click on `compare and pull requests`
-
-10. Add appropriate title and description to your pull request explaining your changes. Click on `Create Pull Request`
-
-## 📜 License
 [MIT License](https://github.com/chinmaychahar/ReThreads/blob/main/LICENSE)
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-   
-   
-
